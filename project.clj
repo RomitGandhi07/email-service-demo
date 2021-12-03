@@ -15,6 +15,7 @@
                  [expound "0.8.10"]
                  [funcool/struct "1.4.0"]
                  [hiccup "1.0.5"]
+                 [jarohen/chime "0.3.3"]
                  [json-html "0.4.7"]
                  [luminus-transit "0.1.2"]
                  [luminus-undertow "0.1.12"]

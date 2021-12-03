@@ -80,6 +80,7 @@
     <orderEntry type="library" name="Leiningen: io.aviso/pretty:0.1.37" level="project" />
     <orderEntry type="library" name="Leiningen: io.github.classgraph/classgraph:4.8.115" level="project" />
     <orderEntry type="library" name="Leiningen: io.undertow/undertow-core:2.2.10.Final" level="project" />
+    <orderEntry type="library" name="Leiningen: jarohen/chime:0.3.3" level="project" />
     <orderEntry type="library" name="Leiningen: javax.servlet/javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="Leiningen: javax.xml.bind/jaxb-api:2.3.0" level="project" />
     <orderEntry type="library" name="Leiningen: json-html:0.4.7" level="project" />

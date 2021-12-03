@@ -8,7 +8,9 @@
    [clojure.tools.logging :as log]
    [mount.core :as mount]
    [taoensso.carmine :as car :refer [wcar]]
-   [email-service.handlers.email :refer [send-email]])
+   [email-service.handlers.email :refer [send-email]]
+   [chime.core :as chime])
+  (:import (java.time Instant Duration))
   (:gen-class))
 
 ;; log uncaught exceptions in threads
@@ -66,5 +68,22 @@
      "foo*"   (fn f2 [msg] (println "Pattern match: " msg))}
     (car/subscribe  "email" "foobaz")))
 
+(defn cron-job
+  []
+  ;(let [now (Instant/now)]
+  ;  (chime/chime-at [(.plusSeconds now 2)
+  ;                   (.plusSeconds now 4)]
+  ;                  (fn [time]
+  ;                    (println "Chiming at" time))))
+  (-> (chime/periodic-seq (Instant/now) (Duration/ofSeconds 10))
+      (chime/chime-at (fn [time]
+                        (println "Checking at 1 " time))))
+
+  (-> (chime/periodic-seq (Instant/now) (Duration/ofSeconds 15))
+      (chime/chime-at (fn [time]
+                        (println "Checking at 2 " time)))))
+
 (defn -main [& args]
-  (start-app args))
+  (start-app args)
+  ;;(cron-job)
+  )
